@@ -46,3 +46,6 @@ map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 
 -- Better paste in visual mode (doesn't overwrite clipboard)
 map("v", "p", '"_dP', { desc = "Paste without yanking" })
+
+-- Terminal splitting
+map("n", "<leader>t", ":vsplit term<CR>", {desc = "Split term"})

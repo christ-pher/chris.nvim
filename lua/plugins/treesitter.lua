@@ -15,31 +15,20 @@ return {
   opts = {
     -- List of parsers to install (or "all" for all maintained parsers)
     -- Run :TSInstall <language> to install more parsers
+    -- Tip: Keep this list minimal - only include languages you use frequently
     ensure_installed = {
       "lua",
       "vim",
       "vimdoc",
       "query",
-      "javascript",
-      "typescript",
-      "tsx",
-      "python",
-      "rust",
-      "json",
-      "yaml",
-      "toml",
-      "markdown",
-      "markdown_inline",
-      "html",
-      "css",
-      "bash",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
 
     -- Automatically install missing parsers when entering buffer
-    auto_install = true,
+    -- Set to false for better performance - manually install with :TSInstall <language>
+    auto_install = false,
 
     -- Highlighting configuration
     highlight = {
@@ -64,8 +53,9 @@ return {
     },
 
     -- Incremental selection based on treesitter nodes
+    -- Disabled by default for better performance - enable if you use it
     incremental_selection = {
-      enable = true,
+      enable = false,
       keymaps = {
         init_selection = "<CR>",    -- Start selection
         node_incremental = "<CR>",  -- Increment to next node

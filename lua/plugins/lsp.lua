@@ -60,7 +60,14 @@ return {
     -- ========================================================================
     vim.diagnostic.config({
       virtual_text = true,  -- Show diagnostics inline
-      signs = true,         -- Show signs in sign column
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "✘",
+          [vim.diagnostic.severity.WARN] = "▲",
+          [vim.diagnostic.severity.HINT] = "⚑",
+          [vim.diagnostic.severity.INFO] = "»",
+        },
+      },
       update_in_insert = false,  -- Don't update diagnostics while typing
       underline = true,
       severity_sort = true,  -- Sort by severity
@@ -69,13 +76,6 @@ return {
         source = true,  -- Show source of diagnostic
       },
     })
-
-    -- Diagnostic signs in the sign column
-    local signs = { Error = "✘", Warn = "▲", Hint = "⚑", Info = "»" }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
 
     -- ========================================================================
     -- LSP Server Configurations (Using vim.lsp.config)
