@@ -31,22 +31,22 @@ return {
         -- Choose your style by uncommenting one of the options below:
 
         -- Option 1: No border (clean, minimal)
-        completion = {
-          border = "none",
-          winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None",
-        },
-        documentation = {
-          border = "none",
-        },
-
-        -- Option 2: Single line border (uncomment to use)
         -- completion = {
-        --   border = "single",
-        --   winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        --   border = "none",
+        --   winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None",
         -- },
         -- documentation = {
-        --   border = "single",
+        --   border = "none",
         -- },
+
+        -- Option 2: Single line border (uncomment to use)
+        completion = {
+          border = "single",
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        },
+        documentation = {
+          border = "single",
+        },
 
         -- Option 3: Rounded border (uncomment to use)
         -- completion = cmp.config.window.bordered(),

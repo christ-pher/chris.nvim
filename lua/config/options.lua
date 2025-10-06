@@ -10,8 +10,8 @@ opt.number = true          -- Show line numbers
 opt.relativenumber = true  -- Show relative line numbers
 
 -- Indentation
-opt.tabstop = 2           -- Number of spaces a tab counts for
-opt.shiftwidth = 2        -- Number of spaces for auto-indent
+opt.tabstop = 4           -- Number of spaces a tab counts for
+opt.shiftwidth = 4        -- Number of spaces for auto-indent
 opt.expandtab = true      -- Use spaces instead of tabs
 opt.autoindent = true     -- Copy indent from current line when starting new line
 opt.smartindent = true    -- Smart autoindenting when starting a new line
