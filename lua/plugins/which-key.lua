@@ -1,0 +1,76 @@
+-- ============================================================================
+-- Which-Key: Keybinding Helper
+-- ============================================================================
+-- Shows available keybindings in a popup as you type
+-- GitHub: https://github.com/folke/which-key.nvim
+
+return {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- Popup settings
+    preset = "modern",
+    delay = 300,  -- Delay before showing the popup (ms)
+
+    -- Window settings
+    win = {
+      border = "rounded",
+      padding = { 1, 2 },
+    },
+
+    -- Icon settings
+    icons = {
+      breadcrumb = "»",
+      separator = "➜",
+      group = "+",
+    },
+
+    -- Disable which-key for certain modes
+    disable = {
+      ft = {},  -- Filetypes to disable which-key
+      bt = {},  -- Buffer types to disable which-key
+    },
+  },
+  config = function(_, opts)
+    local wk = require("which-key")
+    wk.setup(opts)
+
+    -- Register key groups and descriptions
+    wk.add({
+      -- File operations
+      { "<leader>f", group = "Find" },
+      { "<leader>ff", desc = "Find files" },
+      { "<leader>fg", desc = "Live grep" },
+      { "<leader>fb", desc = "Find buffers" },
+      { "<leader>fh", desc = "Help tags" },
+      { "<leader>fr", desc = "Recent files" },
+      { "<leader>fd", desc = "Find diagnostics" },
+      { "<leader>fs", desc = "Document symbols" },
+
+      -- Code/LSP operations
+      { "<leader>c", group = "Code" },
+      { "<leader>ca", desc = "Code action" },
+
+      -- Diagnostics
+      { "<leader>d", group = "Diagnostics" },
+      { "<leader>dl", desc = "Diagnostic list" },
+
+      -- General operations
+      { "<leader>w", desc = "Save file" },
+      { "<leader>q", desc = "Quit" },
+      { "<leader>n", desc = "Toggle file explorer" },
+      { "<leader>t", desc = "Vertical terminal split" },
+      { "<leader>T", desc = "Horizontal terminal split" },
+      { "<leader>e", desc = "Show diagnostic" },
+      { "<leader>k", desc = "Signature help" },
+      { "<leader>rn", desc = "Rename symbol" },
+
+      -- Buffer operations
+      { "<leader>b", group = "Buffer" },
+      { "<leader>bd", desc = "Delete buffer" },
+
+      -- Visual mode
+      { "<leader>c", desc = "Code action", mode = "v" },
+    })
+  end,
+}

@@ -48,4 +48,14 @@ map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 map("v", "p", '"_dP', { desc = "Paste without yanking" })
 
 -- Terminal splitting
-map("n", "<leader>t", ":vsplit term<CR>", {desc = "Split term"})
+map("n", "<leader>t", "<cmd>vsplit term<CR>", { desc = "Vertical terminal split" })
+map("n", "<leader>T", "<cmd>split | terminal<CR><C-w>J", { desc = "Horizontal terminal split" })
+
+-- Terminal mode navigation (Ctrl+hjkl to switch windows from terminal)
+map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window from terminal" })
+map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to bottom window from terminal" })
+map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to top window from terminal" })
+map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window from terminal" })
+
+-- Exit terminal mode with Esc
+map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
