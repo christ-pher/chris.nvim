@@ -19,13 +19,6 @@ A clean, modular, and well-documented Neovim configuration using lazy.nvim.
 │       └── lsp.lua            # Native LSP configuration
 ```
 
-## First Launch
-
-1. Start Neovim: `nvim`
-2. Lazy.nvim will auto-install and download plugins
-3. Run `:Mason` to see installed LSP servers
-4. LSP servers will auto-install for configured languages
-
 ## Key Bindings
 
 **Leader key:** `Space`
@@ -56,43 +49,8 @@ A clean, modular, and well-documented Neovim configuration using lazy.nvim.
 ### Mason
 - `<Space>m` - Open Mason UI
 
-## Customization
+## Installation
 
-### Add/Remove Neovim Settings
-Edit: `lua/config/options.lua`
-
-### Add/Remove Keybindings
-Edit: `lua/config/keymaps.lua`
-
-### Add LSP Servers
-1. Edit `lua/plugins/mason.lua` - Add server to `ensure_installed` list
-2. Edit `lua/plugins/lsp.lua` - Add server configuration
-3. Run `:Mason` to verify installation
-
-### Add New Plugins
-Create a new file in `lua/plugins/` (e.g., `lua/plugins/myplugin.lua`):
-
-```lua
-return {
-  "author/plugin-name",
-  config = function()
-    -- Plugin configuration
-  end,
-}
+```bash
+git clone https://github.com/christ-pher/chris.nvim.git ~/.config/nvim && nvim
 ```
-
-Lazy.nvim auto-loads all files from the `lua/plugins/` directory.
-
-## Requirements
-
-- Neovim 0.11.x or newer
-- Git (for plugin management)
-- Ripgrep (for Telescope live_grep): `sudo apt install ripgrep` or `brew install ripgrep`
-- Language-specific tools (installed via Mason)
-
-## Troubleshooting
-
-- Check plugin status: `:Lazy`
-- Check LSP status: `:LspInfo`
-- Check Mason installations: `:Mason`
-- View logs: `:messages`
