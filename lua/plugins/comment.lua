@@ -7,6 +7,10 @@
 return {
   "numToStr/Comment.nvim",
   event = { "BufReadPre", "BufNewFile" },  -- Load when opening a file
+  keys = {
+    { "<leader>/", "gcc", desc = "Toggle comment line", remap = true },
+    { "<leader>/", "gc", desc = "Toggle comment", mode = "v", remap = true },
+  },
   config = function()
     require("Comment").setup({
       -- Add a space between comment and the line

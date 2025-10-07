@@ -64,6 +64,8 @@ return {
       { "<leader>e", desc = "Show diagnostic" },
       { "<leader>k", desc = "Signature help" },
       { "<leader>rn", desc = "Rename symbol" },
+      { "<leader>F", desc = "Format buffer" },
+      { "<leader>/", desc = "Toggle comment line" },
 
       -- Buffer operations
       { "<leader>b", group = "Buffer" },
@@ -76,6 +78,17 @@ return {
 
       -- Visual mode
       { "<leader>c", desc = "Code action", mode = "v" },
+      { "<leader>/", desc = "Toggle comment", mode = "v" },
+
+      -- Comment keybinds
+      { "gc", group = "Comment" },
+      { "gcc", desc = "Toggle comment line" },
+      { "gbc", desc = "Toggle block comment" },
+      { "gcO", desc = "Comment line above" },
+      { "gco", desc = "Comment line below" },
+      { "gcA", desc = "Comment end of line" },
+      { "gc", desc = "Comment", mode = "v" },
+      { "gb", desc = "Block comment", mode = "v" },
     })
   end,
 }
