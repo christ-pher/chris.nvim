@@ -137,6 +137,38 @@ return {
     })
 
     -- ========================================================================
+    -- Format on Save
+    -- ========================================================================
+    -- Automatically format buffers on save using LSP
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
+      callback = function(args)
+        -- Skip if format-on-save is disabled
+        if vim.b[args.buf].disable_autoformat or vim.g.disable_autoformat then
+          return
+        end
+
+        -- Format using LSP
+        vim.lsp.buf.format({
+          bufnr = args.buf,
+          timeout_ms = 1000,
+          async = false,
+        })
+      end,
+    })
+
+    -- Toggle format-on-save
+    vim.keymap.set("n", "<leader>tf", function()
+      if vim.g.disable_autoformat then
+        vim.g.disable_autoformat = false
+        print("Format on save enabled")
+      else
+        vim.g.disable_autoformat = true
+        print("Format on save disabled")
+      end
+    end, { desc = "Toggle format on save" })
+
+    -- ========================================================================
     -- Enable LSP servers
     -- ========================================================================
     -- Enable all configured servers
