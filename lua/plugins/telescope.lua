@@ -18,6 +18,7 @@ return {
     { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Help tags" },
     { "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Recent files" },
+    { "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Find in current buffer" },
 
     -- LSP pickers (useful when LSP is active)
     { "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "Find diagnostics" },
