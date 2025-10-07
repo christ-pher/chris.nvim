@@ -49,7 +49,7 @@ map("v", "p", '"_dP', { desc = "Paste without yanking" })
 
 -- Terminal splitting
 map("n", "<leader>t", "<cmd>vsplit term<CR>", { desc = "Vertical terminal split" })
-map("n", "<leader>T", "<cmd>split | terminal<CR><C-w>J", { desc = "Horizontal terminal split" })
+map("n", "<leader>T", "<cmd>split | terminal<CR><C-w>J<cmd>resize 15<CR>", { desc = "Horizontal terminal split" })
 
 -- Terminal mode navigation (Ctrl+hjkl to switch windows from terminal)
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window from terminal" })

@@ -68,6 +68,11 @@ return {
       -- Buffer operations
       { "<leader>b", group = "Buffer" },
       { "<leader>bd", desc = "Delete buffer" },
+      { "<leader>bp", desc = "Toggle pin buffer" },
+      { "<leader>bP", desc = "Delete non-pinned buffers" },
+      { "<leader>bo", desc = "Delete other buffers" },
+      { "<leader>br", desc = "Delete buffers to the right" },
+      { "<leader>bl", desc = "Delete buffers to the left" },
 
       -- Visual mode
       { "<leader>c", desc = "Code action", mode = "v" },
